@@ -1,0 +1,178 @@
+{
+    "require script": {
+        "prefix": [
+            "srequire"
+        ],
+        "body": [
+            "local $0 = require(script.$0)"
+        ]
+    },
+    "roblox service": {
+        "prefix": [
+            "service"
+        ],
+        "body": [
+            "local $0 = game:GetService(\"$0\")"
+        ]
+    },
+    "unite service": {
+        "prefix": [
+            "uniteService"
+        ],
+        "body": [
+            "local ${1:Name} = Unite.getService('${1:Name}')"
+        ]
+    },
+    "unite controller": {
+        "prefix": [
+            "uniteController"
+        ],
+        "body": [
+            "local ${1:Name} = Unite.getController('${1:Name}')"
+        ]
+    },
+    "unite": {
+        "prefix": [
+            "unite"
+        ],
+        "body": [
+            "local Unite = require(game:GetService(\"ReplicatedStorage\").Unite)"
+        ]
+    },
+    "shared util": {
+        "prefix": [
+            "utilShared"
+        ],
+        "body": [
+            "local ${0:Name} = Unite.getSharedUtil(\"${0:Name}\")"
+        ]
+    },
+    "server util": {
+        "prefix": [
+            "utilServer"
+        ],
+        "body": [
+            "local ${1:Name} = Unite.getServerUtil(\"${1:Name}\")"
+        ]
+    },
+    "client util": {
+        "prefix": [
+            "utilClient"
+        ],
+        "body": [
+            "local ${0:Name} = Unite.getClientUtil(\"${0:Name}\")"
+        ]
+    },
+    "shared module": {
+        "prefix": [
+            "moduleShared"
+        ],
+        "body": [
+            "local ${0:Name} = Unite.getSharedModule(\"${0:Name}\")"
+        ]
+    },
+    "server module": {
+        "prefix": [
+            "moduleServer"
+        ],
+        "body": [
+            "local ${0:Name} = Unite.getServerModule(\"${0:Name}\")"
+        ]
+    },
+    "client module": {
+        "prefix": [
+            "moduleClient"
+        ],
+        "body": [
+            "local ${0:Name} = Unite.getClientModule(\"${0:Name}\")"
+        ]
+    },
+    "UDim2.fromScale": {
+        "prefix": [
+            "scale"
+        ],
+        "body": [
+            "UDim2.fromScale(0$1, 0$2),$0"
+        ]
+    },
+    "roact element": {
+        "prefix": [
+            "element"
+        ],
+        "body": [
+            "Roact.createElement($0),"
+        ]
+    },
+    "create Roact.ref": {
+        "prefix": [
+            "createRef"
+        ],
+        "body": [
+            "Roact.createRef()${1:,}"
+        ]
+    },
+    "UIAspectRatioConstraint": {
+        "prefix": [
+            "ratio"
+        ],
+        "body": [
+            "Roact.createElement(\"UIAspectRatioConstraint\"$0),"
+        ]
+    },
+    "roact ref": {
+        "prefix": [
+            "ref"
+        ],
+        "body": [
+            "[Roact.Ref] = self.$0"
+        ]
+    },
+    "roact event": {
+        "prefix": [
+            "event"
+        ],
+        "body": [
+            "[Roact.Event.${1|Activated,InputBegan,InputEnded,MouseButton1Click,MouseButton1Down,MouseButton1Up,MouseButton2Click,MouseButton2Down,MouseButton2Up|}] = $0"
+        ]
+    },
+    "roact render method": {
+        "prefix": [
+            "render"
+        ],
+        "body": [
+            "function $1:render()",
+            "\treturn $0",
+            "end"
+        ]
+    },
+    "Roact Component": {
+        "prefix": [
+            "rc"
+        ],
+        "body": [
+            "local $TM_FILENAME_BASE = Roact.Component:extend(\"$TM_FILENAME_BASE\")\n",
+            "function $TM_FILENAME_BASE:render()",
+            "\treturn",
+            "end\n",
+            "return $TM_FILENAME_BASE"
+        ]
+    },
+    "roact-rodux stateful component": {
+        "prefix": [
+            "rdc"
+        ],
+        "body": [
+            "local $TM_FILENAME_BASE = Roact.Component:extend(\"$TM_FILENAME_BASE\")\n",
+            "function $TM_FILENAME_BASE:render()",
+            "\treturn",
+            "end\n",
+            "local function mapStateToProps(storeState, props)",
+            "\treturn {}",
+            "end\n",
+            "local function mapDispatchToProps(dispatch)",
+            "\treturn {}",
+            "end\n",
+            "return RoactRodux.connect(mapStateToProps, mapDispatchToProps)($TM_FILENAME_BASE)"
+        ]
+    }
+}
