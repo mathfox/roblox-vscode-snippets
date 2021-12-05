@@ -1,5 +1,5 @@
 {
-    "require script": {
+    "require Script related path": {
         "prefix": [
             "srequire"
         ],
@@ -135,13 +135,33 @@
             "[Roact.Event.${1|Activated,InputBegan,InputEnded,MouseButton1Click,MouseButton1Down,MouseButton1Up,MouseButton2Click,MouseButton2Down,MouseButton2Up|}] = $0"
         ]
     },
-    "roact render method": {
+    "Roact render method": {
         "prefix": [
             "render"
         ],
         "body": [
-            "function $1:render()",
+            "function $TM_FILENAME_BASE:render()",
             "\treturn $0",
+            "end"
+        ]
+    },
+    "Roact init method": {
+        "prefix": [
+            "render"
+        ],
+        "body": [
+            "function $TM_FILENAME_BASE:init()",
+            "\t$0",
+            "end"
+        ]
+    },
+    "Roact didMount method": {
+        "prefix": [
+            "render"
+        ],
+        "body": [
+            "function $TM_FILENAME_BASE:didMount()",
+            "\t$0",
             "end"
         ]
     },
