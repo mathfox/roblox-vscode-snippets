@@ -4,7 +4,7 @@
             "sreq"
         ],
         "body": [
-            "local $0 = require(script.$0)"
+            "local $1 = require(script.$1)$0"
         ]
     },
     "insert Roblox Service": {
@@ -12,7 +12,7 @@
             "service"
         ],
         "body": [
-            "local $0 = game:GetService(\"$0\")"
+            "local $1 = game:GetService(\"$1\")$0"
         ]
     },
     "insert Unite service": {
@@ -147,7 +147,7 @@
     },
     "Roact init method": {
         "prefix": [
-            "render"
+            "init"
         ],
         "body": [
             "function ${1:$TM_FILENAME_BASE}:init()",
