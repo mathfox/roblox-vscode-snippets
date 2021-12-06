@@ -20,7 +20,7 @@
             "uniteService"
         ],
         "body": [
-            "local $0 = Unite.getService(\"$0\")"
+            "local $1 = Unite.getService(\"$1\")$0"
         ]
     },
     "insert Unite controller": {
@@ -28,7 +28,7 @@
             "uniteController"
         ],
         "body": [
-            "local $0 = Unite.getController(\"$0\")"
+            "local $1 = Unite.getController(\"$1\")$0"
         ]
     },
     "insert Unite framework": {
@@ -44,7 +44,7 @@
             "utilShared"
         ],
         "body": [
-            "local $0 = Unite.getSharedUtil(\"$0\")"
+            "local $1 = Unite.getSharedUtil(\"$1\")$0"
         ]
     },
     "insert Server util": {
@@ -52,7 +52,7 @@
             "utilServer"
         ],
         "body": [
-            "local $0 = Unite.getServerUtil(\"$0\")"
+            "local $1 = Unite.getServerUtil(\"$1\")$0"
         ]
     },
     "insert Client util": {
@@ -60,7 +60,7 @@
             "utilClient"
         ],
         "body": [
-            "local $0 = Unite.getClientUtil(\"$0\")"
+            "local $1 = Unite.getClientUtil(\"$1\")$0"
         ]
     },
     "insert Shared module": {
@@ -68,7 +68,7 @@
             "moduleShared"
         ],
         "body": [
-            "local $0 = Unite.getSharedModule(\"$0\")"
+            "local $1 = Unite.getSharedModule(\"$1\")$0"
         ]
     },
     "insert Server Module": {
@@ -76,7 +76,7 @@
             "moduleServer"
         ],
         "body": [
-            "local $0 = Unite.getServerModule(\"$0\")"
+            "local $1 = Unite.getServerModule(\"$1\")$0"
         ]
     },
     "insert Client module": {
@@ -84,7 +84,7 @@
             "moduleClient"
         ],
         "body": [
-            "local $0 = Unite.getClientModule(\"$0\")"
+            "local $1 = Unite.getClientModule(\"$1\")$0"
         ]
     },
     "insert UDim2.fromScale": {
