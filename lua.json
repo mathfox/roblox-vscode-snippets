@@ -100,7 +100,7 @@
             "element"
         ],
         "body": [
-            "Roact.createElement($1)${2:,}$0"
+            "Roact.createElement($0),"
         ]
     },
     "create Roact ref": {
@@ -157,7 +157,7 @@
     },
     "Roact Component didMount method": {
         "prefix": [
-            "render"
+            "didMount"
         ],
         "body": [
             "function ${1:$TM_FILENAME_BASE}:didMount()",
