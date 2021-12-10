@@ -95,6 +95,15 @@
             "UDim2.fromScale(0$1, 0$2)${3:,}$0"
         ]
     },
+    "insert Roact": {
+        "prefix": "roact",
+        "body": [
+            "local Unite = require(game:GetService(\"ReplicatedStorage\").Unite)",
+            "",
+            "local Roact = Unite.getSharedUtil($\"Roact\")"
+        ],
+        "description": "insert Roact"
+    },
     "insert Roact element": {
         "prefix": [
             "element"
@@ -117,7 +126,8 @@
         ],
         "body": [
             "Roact.createElement(\"UIAspectRatioConstraint\"$0),"
-        ]
+        ],
+        "description": "A shorthand to insert UIAspectRatioConstraint using Roact"
     },
     "assign Roact.Ref": {
         "prefix": [
