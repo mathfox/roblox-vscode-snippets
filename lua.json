@@ -112,6 +112,14 @@
             "Roact.createElement($0),"
         ]
     },
+    "insert Roact element without comma": {
+        "prefix": [
+            "relement"
+        ],
+        "body": [
+            "Roact.createElement($0)"
+        ]
+    },
     "create Roact ref": {
         "prefix": [
             "createRef"
