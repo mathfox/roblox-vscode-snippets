@@ -122,7 +122,7 @@
         "body": [
             "local Unite = require(game:GetService(\"ReplicatedStorage\").Unite)",
             "",
-            "local Roact = Unite.getSharedUtil($\"Roact\")"
+            "local Roact = require(Unite.SharedUtils.Roact)"
         ],
         "description": "insert Roact"
     },
