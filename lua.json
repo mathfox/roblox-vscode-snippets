@@ -1,15 +1,26 @@
 {
     "require script-related ModuleScript": {
         "prefix": [
-            "sreq"
+            "sreq",
+            "script-require"
         ],
         "body": [
             "local $1 = require(script.$1)$0"
         ]
     },
+    "require Parent-related ModuleScript": {
+        "prefix": [
+            "preq",
+            "parent-require"
+        ],
+        "body": [
+            "local $1 = require(script.Parent.$1)$0"
+        ]
+    },
     "insert Roblox Service": {
         "prefix": [
-            "service"
+            "service",
+            "roblox-service"
         ],
         "body": [
             "local $1 = game:GetService(\"$1\")$0"
@@ -17,7 +28,8 @@
     },
     "insert Unite service": {
         "prefix": [
-            "uniteService"
+            "uservice",
+            "unite-service"
         ],
         "body": [
             "local $1 = Unite.getService(\"$1\")$0"
@@ -25,7 +37,8 @@
     },
     "insert Unite controller": {
         "prefix": [
-            "uniteController"
+            "ucontroller",
+            "unite-controller"
         ],
         "body": [
             "local $1 = Unite.getController(\"$1\")$0"
@@ -39,52 +52,61 @@
             "local Unite = require(game:GetService(\"ReplicatedStorage\").Unite)"
         ]
     },
-    "insert Shared util": {
+    "insert Unite framework and ReplicatedStorage": {
         "prefix": [
-            "utilShared"
+            "runite"
         ],
         "body": [
-            "local $1 = Unite.getSharedUtil(\"$1\")$0"
+            "local ReplicatedStorage = game:GetService(\"ReplicatedStorage\")",
+            "local Unite = require(ReplicatedStorage.Unite)"
+        ]
+    },
+    "insert Shared util": {
+        "prefix": [
+            "util-shared"
+        ],
+        "body": [
+            "local $1 = require(Unite.SharedUtils.$1)$0"
         ]
     },
     "insert Server util": {
         "prefix": [
-            "utilServer"
+            "util-server"
         ],
         "body": [
-            "local $1 = Unite.getServerUtil(\"$1\")$0"
+            "local $1 = require(Unite.ServerUtils.$1)$0"
         ]
     },
     "insert Client util": {
         "prefix": [
-            "utilClient"
+            "util-client"
         ],
         "body": [
-            "local $1 = Unite.getClientUtil(\"$1\")$0"
+            "local $1 = require(Unite.ClientUtils.$1)$0"
         ]
     },
     "insert Shared module": {
         "prefix": [
-            "moduleShared"
+            "module-shared"
         ],
         "body": [
-            "local $1 = Unite.getSharedModule(\"$1\")$0"
+            "local $1 = require(Unite.SharedModules.$1)$0"
         ]
     },
     "insert Server Module": {
         "prefix": [
-            "moduleServer"
+            "module-server"
         ],
         "body": [
-            "local $1 = Unite.getServerModule(\"$1\")$0"
+            "local $1 = require(Unite.ServerModules.$1)$0"
         ]
     },
     "insert Client module": {
         "prefix": [
-            "moduleClient"
+            "module-client"
         ],
         "body": [
-            "local $1 = Unite.getClientModule(\"$1\")$0"
+            "local $1 = require(Unite.ClientModules.$1)$0"
         ]
     },
     "insert UDim2.fromScale": {
