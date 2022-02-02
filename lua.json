@@ -1,238 +1,185 @@
 {
-    "require script-related ModuleScript": {
-        "prefix": [
-            "sreq",
-            "script-require"
-        ],
-        "body": [
-            "local $1 = require(script.$1)$0"
-        ]
-    },
-    "require Parent-related ModuleScript": {
-        "prefix": [
-            "preq",
-            "parent-require"
-        ],
-        "body": [
-            "local $1 = require(script.Parent.$1)$0"
-        ]
-    },
-    "insert Roblox Service": {
-        "prefix": [
-            "service",
-            "roblox-service"
-        ],
-        "body": [
-            "local $1 = game:GetService(\"$1\")$0"
-        ]
-    },
-    "insert Unite service": {
-        "prefix": [
-            "uservice",
-            "unite-service"
-        ],
-        "body": [
-            "local $1 = Unite.getService(\"$1\")$0"
-        ]
-    },
-    "insert Unite controller": {
-        "prefix": [
-            "ucontroller",
-            "unite-controller"
-        ],
-        "body": [
-            "local $1 = Unite.getController(\"$1\")$0"
-        ]
-    },
-    "insert Unite framework": {
-        "prefix": [
-            "unite"
-        ],
-        "body": [
-            "local Unite = require(game:GetService(\"ReplicatedStorage\").Unite)"
-        ]
-    },
-    "insert Unite framework and ReplicatedStorage": {
-        "prefix": [
-            "runite"
-        ],
-        "body": [
-            "local ReplicatedStorage = game:GetService(\"ReplicatedStorage\")",
-            "local Unite = require(ReplicatedStorage.Unite)"
-        ]
-    },
-    "insert Shared util": {
-        "prefix": [
-            "util-shared"
-        ],
-        "body": [
-            "local $1 = require(Unite.SharedUtils.$1)$0"
-        ]
-    },
-    "insert Server util": {
-        "prefix": [
-            "util-server"
-        ],
-        "body": [
-            "local $1 = require(Unite.ServerUtils.$1)$0"
-        ]
-    },
-    "insert Client util": {
-        "prefix": [
-            "util-client"
-        ],
-        "body": [
-            "local $1 = require(Unite.ClientUtils.$1)$0"
-        ]
-    },
-    "insert Shared module": {
-        "prefix": [
-            "module-shared"
-        ],
-        "body": [
-            "local $1 = require(Unite.SharedModules.$1)$0"
-        ]
-    },
-    "insert Server Module": {
-        "prefix": [
-            "module-server"
-        ],
-        "body": [
-            "local $1 = require(Unite.ServerModules.$1)$0"
-        ]
-    },
-    "insert Client module": {
-        "prefix": [
-            "module-client"
-        ],
-        "body": [
-            "local $1 = require(Unite.ClientModules.$1)$0"
-        ]
-    },
-    "insert UDim2.fromScale": {
-        "prefix": [
-            "scale"
-        ],
-        "body": [
-            "UDim2.fromScale(0$1, 0$2)${3:,}$0"
-        ]
-    },
-    "insert Roact": {
-        "prefix": "roact",
-        "body": [
-            "local Unite = require(game:GetService(\"ReplicatedStorage\").Unite)",
-            "",
-            "local Roact = require(Unite.SharedUtils.Roact)"
-        ],
-        "description": "insert Roact"
-    },
-    "insert Roact element": {
-        "prefix": [
-            "element"
-        ],
-        "body": [
-            "Roact.createElement($0),"
-        ]
-    },
-    "insert Roact element without comma": {
-        "prefix": [
-            "relement"
-        ],
-        "body": [
-            "Roact.createElement($0)"
-        ]
-    },
-    "create Roact ref": {
-        "prefix": [
-            "createRef"
-        ],
-        "body": [
-            "Roact.createRef()${1:,}$0"
-        ]
-    },
-    "insert UIAspectRatioConstraint": {
-        "prefix": [
-            "ratio"
-        ],
-        "body": [
-            "Roact.createElement(\"UIAspectRatioConstraint\"$0),"
-        ],
-        "description": "A shorthand to insert UIAspectRatioConstraint using Roact"
-    },
-    "assign Roact.Ref": {
-        "prefix": [
-            "ref"
-        ],
-        "body": [
-            "[Roact.Ref] = self.$0"
-        ]
-    },
-    "assign Roact.Event": {
-        "prefix": [
-            "event"
-        ],
-        "body": [
-            "[Roact.Event.${1|Activated,InputBegan,InputChanged,InputEnded,MouseButton1Click,MouseButton1Down,MouseButton1Up,MouseButton2Click,MouseButton2Down,MouseButton2Up|}] = $0"
-        ]
-    },
-    "Roact Component render method": {
-        "prefix": [
-            "render"
-        ],
-        "body": [
-            "function ${1:$TM_FILENAME_BASE}:render()",
-            "\treturn $0",
-            "end"
-        ]
-    },
-    "Roact init method": {
-        "prefix": [
-            "init"
-        ],
-        "body": [
-            "function ${1:$TM_FILENAME_BASE}:init()",
-            "\t$0",
-            "end"
-        ]
-    },
-    "Roact Component didMount method": {
-        "prefix": [
-            "didMount"
-        ],
-        "body": [
-            "function ${1:$TM_FILENAME_BASE}:didMount()",
-            "\t$0",
-            "end"
-        ]
-    },
-    "Roact Component": {
-        "prefix": [
-            "rc"
-        ],
-        "body": [
-            "local ${1:$TM_FILENAME_BASE} = Roact.Component:extend(\"${1:$TM_FILENAME_BASE}\")\n",
-            "function ${1:$TM_FILENAME_BASE}:render()",
-            "\treturn $0",
-            "end\n",
-            "return ${1:$TM_FILENAME_BASE}"
-        ]
-    },
-    "Roact-Rodux Component": {
-        "prefix": [
-            "rdc"
-        ],
-        "body": [
-            "local ${1:$TM_FILENAME_BASE} = Roact.Component:extend(\"${1:$TM_FILENAME_BASE}\")\n",
-            "function ${1:$TM_FILENAME_BASE}:render()",
-            "\treturn $0",
-            "end\n",
-            "local function mapStateToProps(storeState, props)",
-            "\treturn {}",
-            "end\n",
-            "local function mapDispatchToProps(dispatch)",
-            "\treturn {}",
-            "end\n",
-            "return RoactRodux.connect(mapStateToProps, mapDispatchToProps)(${1:$TM_FILENAME_BASE})"
-        ]
-    }
+   "require script-related ModuleScript": {
+      "prefix": [
+         "srequire",
+         "script-require"
+      ],
+      "body": [
+         "local $1 = require(script.$1)$0"
+      ]
+   },
+   "require Parent-related ModuleScript": {
+      "prefix": [
+         "1require",
+         "1-parent-require"
+      ],
+      "body": [
+         "local $1 = require(script.Parent.$1)$0"
+      ]
+   },
+   "require Parent-Parent-related ModuleScript": {
+      "prefix": [
+         "2require",
+         "2-parent-require"
+      ],
+      "body": [
+         "local $1 = require(script.Parent.Parent.$1)$0"
+      ]
+   },
+   "require Parent-Parent-Parent-related ModuleScript": {
+      "prefix": [
+         "3require",
+         "3-parent-require"
+      ],
+      "body": [
+         "local $1 = require(script.Parent.Parent.Parent.$1)$0"
+      ]
+   },
+   "insert Roblox Service": {
+      "prefix": [
+         "service",
+         "roblox-service"
+      ],
+      "body": [
+         "local $1 = game:GetService(\"$1\")$0"
+      ]
+   },
+   "insert UDim2.fromScale": {
+      "prefix": [
+         "scale"
+      ],
+      "body": [
+         "UDim2.fromScale(0$1, 0$2)${3:,}$0"
+      ]
+   },
+   "insert Roact element without comma": {
+      "prefix": [
+         "element",
+         "roact-element"
+      ],
+      "body": [
+         "Roact.createElement($0)"
+      ]
+   },
+   "insert Roact element with comma": {
+      "prefix": [
+         "celement",
+         "roact-comma-element"
+      ],
+      "body": [
+         "Roact.createElement($0),"
+      ]
+   },
+   "create Roact ref": {
+      "prefix": [
+         "createRef",
+         "roact-createRef"
+      ],
+      "body": [
+         "Roact.createRef()${1:,}$0"
+      ]
+   },
+   "insert UIAspectRatioConstraint": {
+      "prefix": [
+         "ratio",
+         "roact-ratio"
+      ],
+      "body": [
+         "Roact.createElement(\"UIAspectRatioConstraint\"$0),"
+      ],
+      "description": "A shorthand to insert UIAspectRatioConstraint using Roact"
+   },
+   "assign Roact.Ref": {
+      "prefix": [
+         "ref",
+         "roact-ref"
+      ],
+      "body": [
+         "[Roact.Ref] = self.$0"
+      ]
+   },
+   "assign Roact.Event": {
+      "prefix": [
+         "event",
+         "roact-event"
+      ],
+      "body": [
+         "[Roact.Event.${1|Activated,InputBegan,InputChanged,InputEnded,MouseButton1Click,MouseButton1Down,MouseButton1Up,MouseButton2Click,MouseButton2Down,MouseButton2Up|}] = $0"
+      ]
+   },
+   "Roact init method": {
+      "prefix": [
+         "init"
+      ],
+      "body": [
+         "function ${1:$TM_FILENAME_BASE}:init()",
+         "\t$0",
+         "end"
+      ]
+   },
+   "Roact Component render method": {
+      "prefix": [
+         "render",
+         "roact-render"
+      ],
+      "body": [
+         "function ${1:$TM_FILENAME_BASE}:render()",
+         "\treturn $0",
+         "end"
+      ]
+   },
+   "Roact Component didMount method": {
+      "prefix": [
+         "didMount",
+         "roact-didMount"
+      ],
+      "body": [
+         "function ${1:$TM_FILENAME_BASE}:didMount()",
+         "\t$0",
+         "end"
+      ]
+   },
+   "Roact Component willUnmount method": {
+      "prefix": [
+         "willUnmount",
+         "roact-willUnmount"
+      ],
+      "body": [
+         "function ${1:$TM_FILENAME_BASE}:willUnmount()",
+         "\t$0",
+         "end"
+      ]
+   },
+   "Roact Component": {
+      "prefix": [
+         "rc",
+         "roact-component"
+      ],
+      "body": [
+         "local ${1:$TM_FILENAME_BASE} = Roact.Component:extend(\"${1:$TM_FILENAME_BASE}\")\n",
+         "function ${1:$TM_FILENAME_BASE}:render()",
+         "\treturn $0",
+         "end\n",
+         "return ${1:$TM_FILENAME_BASE}"
+      ]
+   },
+   "Roact-Rodux Component": {
+      "prefix": [
+         "rdc",
+         "roact-rodux-component"
+      ],
+      "body": [
+         "local ${1:$TM_FILENAME_BASE} = Roact.Component:extend(\"${1:$TM_FILENAME_BASE}\")\n",
+         "function ${1:$TM_FILENAME_BASE}:render()",
+         "\treturn $0",
+         "end\n",
+         "local function mapStateToProps(storeState, props)",
+         "\treturn {}",
+         "end\n",
+         "local function mapDispatchToProps(dispatch)",
+         "\treturn {}",
+         "end\n",
+         "return RoactRodux.connect(mapStateToProps, mapDispatchToProps)(${1:$TM_FILENAME_BASE})"
+      ]
+   }
 }
