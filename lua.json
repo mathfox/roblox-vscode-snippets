@@ -8,6 +8,15 @@
          "local $1 = require(script.$1)$0"
       ]
    },
+   "require script-related ModuleScript into a table": {
+      "prefix": [
+         "trequire",
+         "table-require"
+      ],
+      "body": [
+         "$1 = require(script.$1),$0"
+      ]
+   },
    "require Parent-related ModuleScript": {
       "prefix": [
          "1require",
