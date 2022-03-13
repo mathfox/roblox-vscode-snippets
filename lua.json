@@ -73,7 +73,7 @@
    "insert Roact element with comma": {
       "prefix": [
          "celement",
-         "roact-comma-element"
+         "comma-roact-element"
       ],
       "body": [
          "Roact.createElement($0),"
@@ -90,13 +90,12 @@
    },
    "insert UIAspectRatioConstraint": {
       "prefix": [
-         "ratio",
-         "roact-ratio"
+         "aratio",
+         "roact-aspect-ratio"
       ],
       "body": [
          "Roact.createElement(\"UIAspectRatioConstraint\"$0),"
-      ],
-      "description": "A shorthand to insert UIAspectRatioConstraint using Roact"
+      ]
    },
    "assign Roact.Ref": {
       "prefix": [
@@ -116,78 +115,62 @@
          "[Roact.Event.${1|Activated,InputBegan,InputChanged,InputEnded,MouseButton1Click,MouseButton1Down,MouseButton1Up,MouseButton2Click,MouseButton2Down,MouseButton2Up|}] = $0"
       ]
    },
-   "Roact init method": {
+   "insert Roact.Component init method": {
       "prefix": [
          "init"
       ],
       "body": [
-         "function ${1:$TM_FILENAME_BASE}:init()",
-         "\t$0",
-         "end"
+         "function ${1:$TM_FILENAME_BASE}:init()\n\t$0\nend"
       ]
    },
-   "Roact Component render method": {
+   "insert Roact.Component render method": {
       "prefix": [
          "render",
          "roact-render"
       ],
       "body": [
-         "function ${1:$TM_FILENAME_BASE}:render()",
-         "\treturn $0",
-         "end"
+         "function ${1:$TM_FILENAME_BASE}:render()\n\treturn $0\nend"
       ]
    },
-   "Roact Component didMount method": {
+   "insert Roact.Component didMount method": {
       "prefix": [
          "didMount",
          "roact-didMount"
       ],
       "body": [
-         "function ${1:$TM_FILENAME_BASE}:didMount()",
-         "\t$0",
-         "end"
+         "function ${1:$TM_FILENAME_BASE}:didMount()\n\t$0\nend"
       ]
    },
-   "Roact Component willUnmount method": {
+   "insert Roact.Component willUnmount method": {
       "prefix": [
          "willUnmount",
          "roact-willUnmount"
       ],
       "body": [
-         "function ${1:$TM_FILENAME_BASE}:willUnmount()",
-         "\t$0",
-         "end"
+         "function ${1:$TM_FILENAME_BASE}:willUnmount()\n\t$0\nend"
       ]
    },
-   "Roact Component": {
+   "insert Roact Component": {
       "prefix": [
          "rc",
          "roact-component"
       ],
       "body": [
          "local ${1:$TM_FILENAME_BASE} = Roact.Component:extend(\"${1:$TM_FILENAME_BASE}\")\n",
-         "function ${1:$TM_FILENAME_BASE}:render()",
-         "\treturn $0",
-         "end\n",
+         "function ${1:$TM_FILENAME_BASE}:render()\n\treturn $0\nend",
          "return ${1:$TM_FILENAME_BASE}"
       ]
    },
-   "Roact-Rodux Component": {
+   "insert Roact-Rodux Component": {
       "prefix": [
-         "rdc",
+         "rrc",
          "roact-rodux-component"
       ],
       "body": [
          "local ${1:$TM_FILENAME_BASE} = Roact.Component:extend(\"${1:$TM_FILENAME_BASE}\")\n",
-         "function ${1:$TM_FILENAME_BASE}:render()",
-         "\treturn $0",
-         "end\n",
-         "local function mapStateToProps(storeState, props)",
-         "\treturn {}",
-         "end\n",
-         "local function mapDispatchToProps(dispatch)",
-         "\treturn {}",
-         "end\n",
+         "function ${1:$TM_FILENAME_BASE}:render()\n\treturn $0\nend\n",
+         "local function mapStateToProps(storeState, props)\n\treturn {}\nend\n",
+         "local function mapDispatchToProps(dispatch)\n\treturn {}\nend\n",
          "return RoactRodux.connect(mapStateToProps, mapDispatchToProps)(${1:$TM_FILENAME_BASE})"
       ]
    }
