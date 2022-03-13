@@ -150,10 +150,10 @@
          "function ${1:$TM_FILENAME_BASE}:willUnmount()\n\t$0\nend"
       ]
    },
-   "insert Roact Component": {
+   "insert new Roact Component": {
       "prefix": [
-         "rc",
-         "roact-component"
+         "nrc",
+         "new-roact-component"
       ],
       "body": [
          "local ${1:$TM_FILENAME_BASE} = Roact.Component:extend(\"${1:$TM_FILENAME_BASE}\")\n",
