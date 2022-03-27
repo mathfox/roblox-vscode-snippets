@@ -1,56 +1,200 @@
 {
-   "require script-related ModuleScript": {
+   "assign script-related ModuleScript to a local varible": {
       "prefix": [
-         "srequire",
-         "script-require"
+         "ams",
+         "assign-module-script"
       ],
       "body": [
-         "local $1 = require(script.$1)$0"
+         "local $1 = script.$1"
       ]
    },
-   "require script-related ModuleScript into a table": {
+   "assign script-related ModuleScript to a custom named local varible": {
       "prefix": [
-         "trequire",
-         "table-require"
+         "anms",
+         "assign-named-module-script"
       ],
       "body": [
-         "$1 = require(script.$1),$0"
+         "local ${2:$1} = script.$1"
       ]
    },
-   "require Parent-related ModuleScript": {
+   "assign required script-related ModuleScript to a local variable": {
       "prefix": [
-         "1require",
-         "1-parent-require"
+         "arms",
+         "assign-required-module-script"
       ],
       "body": [
-         "local $1 = require(script.Parent.$1)$0"
+         "local $1 = require(script.$1)"
       ]
    },
-   "require Parent-Parent-related ModuleScript": {
+   "assign required script-related ModuleScript to a custom named local variable": {
       "prefix": [
-         "2require",
-         "2-parent-require"
+         "anrms",
+         "assign-named-required-module-script"
       ],
       "body": [
-         "local $1 = require(script.Parent.Parent.$1)$0"
+         "local ${2:$1} = require(script.$1)"
       ]
    },
-   "require Parent-Parent-Parent-related ModuleScript": {
+   "assign script-related ModuleScript to a table field": {
       "prefix": [
-         "3require",
-         "3-parent-require"
+         "tams",
+         "table-assign-module-script"
       ],
       "body": [
-         "local $1 = require(script.Parent.Parent.Parent.$1)$0"
+         "$1 = script.$1,"
       ]
    },
-   "insert Roblox Service": {
+   "assign script-related ModuleScript to a custom named table field": {
       "prefix": [
-         "service",
-         "roblox-service"
+         "tanms",
+         "table-assign-named-module-script"
       ],
       "body": [
-         "local $1 = game:GetService(\"$1\")$0"
+         "${2:$1} = script.$1,"
+      ]
+   },
+   "assign required script-related ModuleScript to a table field": {
+      "prefix": [
+         "tarms",
+         "table-assign-required-module-script"
+      ],
+      "body": [
+         "$1 = require(script.$1),"
+      ]
+   },
+   "assign required script-related ModuleScript to a custom named table field": {
+      "prefix": [
+         "tanrms",
+         "table-assign-named-required-module-script"
+      ],
+      "body": [
+         "${2:$1} = require(script.$1),"
+      ]
+   },
+   "assign script.Parent-related ModuleScript to a local variable": {
+      "prefix": [
+         "pams",
+         "parent-assign-module-script"
+      ],
+      "body": [
+         "local $1 = script.Parent.$1"
+      ]
+   },
+   "assign script.Parent-related ModuleScript to a custom named local variable": {
+      "prefix": [
+         "panms",
+         "parent-assign-named-module-script"
+      ],
+      "body": [
+         "local ${2:$1} = script.Parent.$1"
+      ]
+   },
+   "assign required script.Parent-related ModuleScript to a local variable": {
+      "prefix": [
+         "parms",
+         "parent-assign-required-module-script"
+      ],
+      "body": [
+         "local $1 = require(script.Parent.$1)"
+      ]
+   },
+   "assign required script.Parent-related ModuleScript to a custom named local variable": {
+      "prefix": [
+         "panrms",
+         "parent-assign-named-required-module-script"
+      ],
+      "body": [
+         "local ${2:$1} = require(script.Parent.$1)"
+      ]
+   },
+   "assign script.Parent.Parent-related ModuleScript to a local variable": {
+      "prefix": [
+         "ppams",
+         "parent-parent-assign-module-script"
+      ],
+      "body": [
+         "local $1 = script.Parent.Parent.$1"
+      ]
+   },
+   "assign script.Parent.Parent-related ModuleScript to a custom named local variable": {
+      "prefix": [
+         "ppanms",
+         "parent-parent-assign-named-module-script"
+      ],
+      "body": [
+         "local ${2:$1} = script.Parent.Parent.$1"
+      ]
+   },
+   "assign required script.Parent.Parent-related ModuleScript to a local variable": {
+      "prefix": [
+         "pparms",
+         "parent-parent-assign-required-module-script"
+      ],
+      "body": [
+         "local $1 = require(script.Parent.Parent.$1)"
+      ]
+   },
+   "assign required script.Parent.Parent-related ModuleScript to a custom named local variable": {
+      "prefix": [
+         "ppanrms",
+         "parent-parent-assign-named-required-module-script"
+      ],
+      "body": [
+         "local ${2:$1} = require(script.Parent.Parent.$1)"
+      ]
+   },
+   "assign script.Parent.Parent.Parent-related ModuleScript to a local variable": {
+      "prefix": [
+         "pppams",
+         "parent-parent-parent-assign-module-script"
+      ],
+      "body": [
+         "local $1 = script.Parent.Parent.Parent.$1"
+      ]
+   },
+   "assign script.Parent.Parent.Parent-related ModuleScript to a custom named local variable": {
+      "prefix": [
+         "pppanms",
+         "parent-parent-parent-assign-named-module-script"
+      ],
+      "body": [
+         "local ${2:$1} = script.Parent.Parent.Parent.$1"
+      ]
+   },
+   "assign required script.Parent.Parent.Parent-related ModuleScript to a local variable": {
+      "prefix": [
+         "ppparms",
+         "parent-parent-parent-assign-required-module-script"
+      ],
+      "body": [
+         "local $1 = require(script.Parent.Parent.Parent.$1)"
+      ]
+   },
+   "assign required script.Parent.Parent.Parent-related ModuleScript to a custom named local variable": {
+      "prefix": [
+         "pppanrms",
+         "parent-parent-parent-assign-named-required-module-script"
+      ],
+      "body": [
+         "local ${2:$1} = require(script.Parent.Parent.Parent.$1)"
+      ]
+   },
+   "assign Roblox service to a local variable": {
+      "prefix": [
+         "as",
+         "assign-service"
+      ],
+      "body": [
+         "local $1 = game:GetService(\"$1\")"
+      ]
+   },
+   "assign Roblox service to a custom named local variable": {
+      "prefix": [
+         "ans",
+         "assign-named-service"
+      ],
+      "body": [
+         "local ${2:$1} = game:GetService(\"$1\")"
       ]
    },
    "insert UDim2.fromScale": {
