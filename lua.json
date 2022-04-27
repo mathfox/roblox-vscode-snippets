@@ -1,4 +1,20 @@
 {
+   "insert ReplicatedStorage": {
+      "prefix": [
+         "irs"
+      ],
+      "body": [
+         "local ReplicatedStorage = game:GetService(\"ReplicatedStorage\")"
+      ]
+   },
+   "insert StarterPlayer": {
+      "prefix": [
+         "isp"
+      ],
+      "body": [
+         "local StarterPlayer = game:GetService(\"StarterPlayer\")"
+      ]
+   },
    "assign script-related ModuleScript to a local varible": {
       "prefix": [
          "ams",
