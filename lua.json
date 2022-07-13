@@ -333,5 +333,18 @@
          "local function mapDispatchToProps(dispatch)\n\treturn {}\nend\n",
          "return RoactRodux.connect(mapStateToProps, mapDispatchToProps)(${1:$TM_FILENAME_BASE})"
       ]
+   },
+   "TestEZ insert table.freeze validation test": {
+      "prefix": [
+         "tzitft"
+      ],
+      "body": [
+         "expect(function()",
+         "  $1.NEW_FIELD = {}",
+         "end).to.throw()\n",
+         "expect(function()",
+         "  setmetatable($1, {})",
+         "end).to.throw()"
+      ]
    }
 }
